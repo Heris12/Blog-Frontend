@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#132a4b">
+    <title>Simple Blog | Admin Dashboard</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body class="admin-page" id="main-content">
+    <div class="admin-dashboard" style="display: none;">
+        <aside class="sidebar">
+            <a class="admin-brand" href="index.html" aria-label="Simple Blog home">
+                <span class="admin-brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 4.75A1.75 1.75 0 0 1 6.75 3H20v15H7a2 2 0 0 0-2 2V4.75Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                        <path d="M5 20a2 2 0 0 1 2-2h13M9 7h7M9 10h7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                    </svg>
+                </span>
+                <span>Simple<span class="admin-brand-light">Blog</span></span>
+            </a>
+
+            <p class="sidebar-label">WORKSPACE</p>
+            <button class="admin-menu-toggle" id="admin-menu-toggle" type="button"
+                    aria-controls="admin-navigation" aria-expanded="false" aria-label="Open admin menu">
+                <span></span><span></span><span></span>
+                <span class="admin-menu-label">Menu</span>
+            </button>
+            <nav class="admin-nav" id="admin-navigation" aria-label="Admin navigation">
+                <a href="#dashboard" class="active" aria-current="page">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/>
+                        <rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/>
+                        <rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/>
+                        <rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="create.html">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                    <span>Create blog</span>
+                </a>
+                <a href="#manage-users">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20"/>
+                        <circle cx="10" cy="7.5" r="3.5"/>
+                        <path d="M16 4.2a3.5 3.5 0 0 1 0 6.6M20 20v-1.5a3.5 3.5 0 0 0-2.5-3.35"/>
+                    </svg>
+                    <span>Manage users</span>
+                </a>
+                <a href="#manage-posts">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 3.5h9l5 5v12H5a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z"/>
+                        <path d="M14 3.5v5h5M7.5 13h9M7.5 16.5h9"/>
+                    </svg>
+                    <span>Manage posts</span>
+                </a>
+                <a href="authorReg.html">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="9" cy="8" r="3.5"/>
+                        <path d="M3.5 20v-1.5A4.5 4.5 0 0 1 8 14h2a4.5 4.5 0 0 1 4.5 4.5V20M17 8v6M14 11h6"/>
+                    </svg>
+                    <span>Register author</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-note">
+                <span class="sidebar-note-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3.5 14.6 9l5.9.9-4.25 4.2 1 5.9L12 17.2l-5.25 2.8 1-5.9L3.5 9.9 9.4 9 12 3.5Z"/>
+                    </svg>
+                </span>
+                <strong>Your blog, at a glance</strong>
+                <span id="sidebar-glance-summary" aria-live="polite">Loading your blog overview...</span>
+            </div>
+
+            <a class="sidebar-home" href="index.html">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m3.5 10 8.5-7 8.5 7v10.5h-6v-7h-5v7h-6V10Z"/>
+                </svg>
+                <span>Back to blog</span>
+            </a>
+            <button class="sidebar-logout" id="admin-logout" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M10 4H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20H10"/>
+                    <path d="M14 16l4-4-4-4M18 12H9"/>
+                </svg>
+                <span>Log out</span>
+            </button>
+        </aside>
+
+        <main class="main-content" id="dashboard">
+            <header class="admin-topbar">
+                <div class="admin-breadcrumb">
+                    <span>Workspace</span>
+                    <span aria-hidden="true">/</span>
+                    <strong>Dashboard</strong>
+                </div>
+                <a class="view-blog-link" href="index.html">
+                    <span>View blog</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 4h6v6M20 4l-9 9"/>
+                        <path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>
+                    </svg>
+                </a>
+            </header>
+
+            <section class="dashboard-intro dashboard-section" aria-labelledby="welcome-heading">
+                <div>
+                    <p class="eyebrow">YOUR BLOG OVERVIEW</p>
+                    <h1 id="welcome-heading">Welcome to your<br>admin dashboard<span class="welcome-period">.</span></h1>
+                    <p class="intro-copy">A quick look at your blog and community. Create something new or check in on your readers.</p>
+                </div>
+                <div class="intro-illustration" aria-hidden="true">
+                    <svg viewBox="0 0 180 150" fill="none">
+                        <circle cx="91" cy="75" r="67" fill="#EAF1FF"/>
+                        <circle cx="91" cy="75" r="52" fill="#DCE8FF"/>
+                        <rect x="47" y="38" width="70" height="88" rx="9" fill="white" stroke="#C9D9F5" stroke-width="2"/>
+                        <path d="M61 57h41M61 68h41M61 79h27M61 96h41M61 107h32" stroke="#B5C9EC" stroke-linecap="round" stroke-width="4"/>
+                        <rect x="104" y="76" width="35" height="47" rx="7" fill="#4B78C3"/>
+                        <path d="M113 89h17M113 97h17M113 105h11" stroke="white" stroke-linecap="round" stroke-width="3"/>
+                        <circle cx="132" cy="37" r="12" fill="#91B2EF"/>
+                        <path d="m128 37 3 3 6-7" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        <path d="m39 51 2.4 5.1 5.6.8-4 3.9.9 5.6-4.9-2.6-5 2.6 1-5.6-4.1-3.9 5.7-.8L39 51Z" fill="#83A6E5"/>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="stats" aria-label="Blog statistics">
+                <article class="stat-card">
+                    <span class="stat-icon users-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20"/>
+                            <circle cx="10" cy="7.5" r="3.5"/>
+                            <path d="M16 4.2a3.5 3.5 0 0 1 0 6.6M20 20v-1.5a3.5 3.5 0 0 0-2.5-3.35"/>
+                        </svg>
+                    </span>
+                    <div class="stat-copy">
+                        <h2>Total users</h2>
+                        <p id="total-users" aria-live="polite">—</p>
+                        <span>Readers in your community</span>
+                    </div>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-icon posts-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 3.5h9l5 5v12H5a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z"/>
+                            <path d="M14 3.5v5h5M7.5 13h9M7.5 16.5h9"/>
+                        </svg>
+                    </span>
+                    <div class="stat-copy">
+                        <h2>Total posts</h2>
+                        <p id="total-posts" aria-live="polite">—</p>
+                        <span>Stories published so far</span>
+                    </div>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-icon users-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="9" cy="8" r="3.5"/>
+                            <path d="M3.5 20v-1.5A4.5 4.5 0 0 1 8 14h2a4.5 4.5 0 0 1 4.5 4.5V20M17 8v6M14 11h6"/>
+                        </svg>
+                    </span>
+                    <div class="stat-copy">
+                        <h2>Total authors</h2>
+                        <p id="total-authors" aria-live="polite">—</p>
+                        <span>Authors registered on your blog</span>
+                    </div>
+                </article>
+            </section>
+
+            <div class="dashboard-grid">
+                <section class="dashboard-card manage-users" id="manage-users" aria-labelledby="users-heading">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">COMMUNITY</p>
+                            <h2 id="users-heading">Manage users</h2>
+                        </div>
+                        <span class="section-heading-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20"/>
+                                <circle cx="10" cy="7.5" r="3.5"/>
+                                <path d="M16 4.2a3.5 3.5 0 0 1 0 6.6M20 20v-1.5a3.5 3.5 0 0 0-2.5-3.35"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <p class="card-description">Add and manage reader and author accounts.</p>
+                    <form id="user-form" class="admin-user-form">
+                        <input id="user-id" name="id" type="hidden">
+                        <label for="user-username">Username</label>
+                        <input id="user-username" name="username" type="text" autocomplete="username" required>
+                        <label for="user-email">Email</label>
+                        <input id="user-email" name="email" type="email" autocomplete="email" required>
+                        <label for="user-password">Password <span id="password-hint">(required for new users)</span></label>
+                        <input id="user-password" name="password" type="password" minlength="6" autocomplete="new-password">
+                        <label for="user-role">Role</label>
+                        <select id="user-role" name="role">
+                            <option value="user">Reader</option>
+                            <option value="author">Author</option>
+                        </select>
+                        <div class="admin-form-actions">
+                            <button type="submit" id="user-submit">Add user</button>
+                            <button type="button" id="user-cancel" hidden>Cancel edit</button>
+                        </div>
+                        <p id="user-form-message" class="admin-message" role="status" aria-live="polite"></p>
+                    </form>
+                    <div class="admin-table-wrap">
+                        <table class="admin-user-table">
+                            <thead>
+                                <tr><th scope="col">User</th><th scope="col">Role</th><th scope="col">Joined</th><th scope="col">Actions</th></tr>
+                            </thead>
+                            <tbody id="user-list">
+                                <tr><td colspan="4">Loading users...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="dashboard-card manage-posts" id="manage-posts" aria-labelledby="posts-heading">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">CONTENT</p>
+                            <h2 id="posts-heading">Manage posts</h2>
+                        </div>
+                        <span class="section-heading-icon posts-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 3.5h9l5 5v12H5a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2Z"/>
+                                <path d="M14 3.5v5h5M7.5 13h9M7.5 16.5h9"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <p class="card-description">Browse every post, view your own posts, or search by author name.</p>
+                    <form id="post-search-form" class="admin-post-search">
+                        <label for="post-author-search">Search by author name</label>
+                        <input id="post-author-search" name="author" type="search" placeholder="Enter an author or admin name">
+                        <button type="submit">Search</button>
+                        <button type="button" id="my-posts-filter">My posts</button>
+                        <button type="button" id="all-posts-filter">All posts</button>
+                    </form>
+                    <p id="post-list-message" class="admin-message" role="status" aria-live="polite"></p>
+                    <div class="admin-table-wrap">
+                        <table class="admin-user-table admin-post-table">
+                            <thead>
+                                <tr><th scope="col">Post</th><th scope="col">Author</th><th scope="col">Published</th><th scope="col">Actions</th></tr>
+                            </thead>
+                            <tbody id="admin-post-list">
+                                <tr><td colspan="4">Loading posts...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <div class="dashboard-side-column">
+                    <section class="dashboard-card" id="recent-activity" aria-labelledby="activity-heading">
+                        <div class="section-heading compact-heading">
+                            <div>
+                                <p class="eyebrow">LATEST UPDATES</p>
+                                <h2 id="activity-heading">Recent activity</h2>
+                            </div>
+                            <span class="section-heading-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="8.5"/>
+                                    <path d="M12 7v5l3.5 2"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div id="activity-list" class="activity-list" aria-live="polite">
+                            <p class="activity-empty">Loading recent activity...</p>
+                        </div>
+                    </section>
+                    <section class="dashboard-card" aria-labelledby="quick-start-heading">
+                        <div class="section-heading compact-heading">
+                            <div>
+                                <p class="eyebrow">READY WHEN YOU ARE</p>
+                                <h2 id="quick-start-heading">Share a new story</h2>
+                            </div>
+                            <span class="section-heading-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 5v14M5 12h14"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <p class="card-description">Your next post could be the start of a great conversation.</p>
+                        <a class="view-blog-link" href="create.html">Create a blog post <span aria-hidden="true">→</span></a>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

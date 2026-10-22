@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#132a4b">
+    <title>Register an Author | Simple Blog</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body class="author-account-page">
+    <header>
+        <div class="nav-container">
+            <a href="admin.html" class="brand">Simple Blog Admin</a>
+            <button class="nav-menu-toggle" id="nav-menu-toggle" type="button"
+                    aria-controls="nav-link" aria-expanded="false" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-link" id="nav-link" aria-label="Admin navigation">
+                <ul>
+                    <li><a href="admin.html">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="author-account-main">
+        <section class="author-account-card" aria-labelledby="register-author-heading">
+            <p class="eyebrow">AUTHOR TEAM</p>
+            <h1 id="register-author-heading">Register an author</h1>
+            <p>Create an author account. They can sign in with these credentials and manage their own posts.</p>
+            <form id="author-register-form">
+                <label for="author-username">Username
+                    <input id="author-username" name="username" type="text" autocomplete="username" required>
+                </label>
+                <label for="author-email">Email
+                    <input id="author-email" name="email" type="email" autocomplete="email" required>
+                </label>
+                <label for="author-password">Temporary password
+                    <input id="author-password" name="password" type="password" minlength="6" autocomplete="new-password" required>
+                </label>
+                <button type="submit">Create author account</button>
+            </form>
+            <p id="author-register-message" class="author-admin-message" role="status" aria-live="polite"></p>
+            <a class="author-back-link" href="admin.html">← Return to dashboard</a>
+        </section>
+    </main>
+    <script type="module" src="js/author-register.js"></script>
+    <script type="module" src="js/nav.js"></script>
+</body>
+</html>

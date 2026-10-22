@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog || Home</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand">Simple Blog</a>
+
+            <button class="nav-menu-toggle" id="nav-menu-toggle" type="button"
+                    aria-controls="nav-link" aria-expanded="false" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-link" id="nav-link" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="create.html">Create Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h2>All Blogs</h2>
+        <div class="post-list" id="post-list">
+            <p>Loading... Blog Posts...</p>
+        </div>
+
+        <div>
+             
+        </div>
+    </main>
+
+    <script type="module" src="js/feed.js"></script>
+    <script type="module" src="js/nav.js"></script>
+</body>
+</html>

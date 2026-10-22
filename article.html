@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article page || Simple Blog</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand">Simple Blog</a>
+
+            <button class="nav-menu-toggle" id="nav-menu-toggle" type="button"
+                    aria-controls="nav-link" aria-expanded="false" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-link" id="nav-link">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container" id="article-container">
+        <div class="form-card">
+            <h1>Read Article</h1>
+            <p class="form-intro">Read the full article below.</p>
+            <div id="article-content">
+                <p>Loading article...</p>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="js/article.js"></script>
+    <script type="module" src="js/nav.js"></script>
+</body>
+</html>
