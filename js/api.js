@@ -1,11 +1,7 @@
 const API_BASE = window.location.hostname === "localhost" ? "http://localhost:3000/api" : 
-"https://blog-backend-server-n9jo.onrender.com"
+"https://blog-backend-server-n9jo.onrender.com/api"
 
 
-// (
-//     window.API_BASE_URL
-//     || `${window.location.protocol}//${window.location.hostname}:3000/api`
-// ).replace(/\/+$/, "");
 
 export async function request(endpoint, option = {}) {
     const headers = new Headers(option.headers || {});
